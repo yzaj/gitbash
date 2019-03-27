@@ -12,7 +12,9 @@ set GitUrl2=v2.21.0.windows.1
 REM 
 cd /d %RootDir%
 
-
+if exist %GitDest%\git-bash.exe (
+  call :EchoError GitBash ÒÑ°²×°!
+)
 
 
 
