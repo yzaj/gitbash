@@ -16,14 +16,24 @@ if exist %DestDir%\git-bash.exe (
   call :EchoError GitBash 已安装!
 )
 
+if exist D:\ (
+  set DestDir=D:\yzaj\Git
+  
+  if exist %DestDir%\git-bash.exe (
+    call :EchoError GitBash 已安装!
+  )
+)
 
+REM 下载 GitBash
+if not exist %GitSrc% (
+  wget.exe -c %GitUrl%
+)
 
+if not exist %GitSrc% (
+  call :EchoError GitBash 下载失败!
+)
 
-
-
-
-
-
+REM 安装 GitBash
 
 
 
