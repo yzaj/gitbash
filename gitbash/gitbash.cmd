@@ -34,7 +34,7 @@ if not exist %GitBash% (
 )
 
 REM ¸´ÖÆÎÄ¼þ
-xcopy resource\"Git Bash.lnk" C:\Users\Public\Desktop /y
+xcopy resource\"Git Bash.lnk" %UserProfile%\Desktop /y
 xcopy resource\.minttyrc %UserProfile% /y
 xcopy resource\.bash_history %UserProfile% /y
 
