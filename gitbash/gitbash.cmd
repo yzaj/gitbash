@@ -3,22 +3,28 @@ title %~nx0
 
 REM 变量
 set RootDir="%~dp0"
-set InstallDir="C:\Program Files"
+set DestDir="C:\Program Files\Git"
 set GitSrc=Git-2.21.0-64-bit.exe
-set GitDest=%InstallDir%\Git
-set GitUrl1=https://npm.taobao.org/mirrors/git-for-windows
-set GitUrl2=v2.21.0.windows.1
+set GitVer=v2.21.0.windows.1
+set GitUrl=https://npm.taobao.org/mirrors/git-for-windows/%GitVer%/%GitSrc%
 
-REM 
+REM 切换当前目录
 cd /d %RootDir%
 
-if exist %GitDest%\git-bash.exe (
+REM 检查 GitBash
+if exist %DestDir%\git-bash.exe (
   call :EchoError GitBash 已安装!
 )
 
-if exist D:\ (
-  set InstallDir=D:\yzaj
-)
+
+
+
+
+
+
+
+
+
 
 
 
