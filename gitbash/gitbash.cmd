@@ -16,7 +16,9 @@ if exist %GitDest%\git-bash.exe (
   call :EchoError GitBash ÒÑ°²×°!
 )
 
-
+if exist D:\ (
+  set InstallDir=D:\yzaj
+)
 
 
 
