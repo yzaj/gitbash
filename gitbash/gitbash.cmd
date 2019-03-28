@@ -13,7 +13,7 @@ cd /d %RootDir%
 
 REM 检查 GitBash
 if exist %DestDir%\git-bash.exe (
-  call :EchoError GitBash 已安装!
+  call :EchoError GitBash 已安装！
 )
 
 setlocal enabledelayedexpansion
@@ -22,7 +22,7 @@ if exist D:\ (
   set DestDir=D:\yzaj\Git
   
   if exist !DestDir!\git-bash.exe (
-    call :EchoError GitBash 已安装!
+    call :EchoError GitBash 已安装！
   )
 )
 
@@ -32,15 +32,15 @@ if not exist %GitSrc% (
 )
 
 if not exist %GitSrc% (
-  call :EchoError GitBash 下载失败!
+  call :EchoError GitBash 下载失败！
 )
 
 REM 安装 GitBash
 echo,正在安装 GitBash ...
-start /wait "" %GitSrc% /sp- /silent /norestart /dir="!DestDir!"
+start /wait "" %GitSrc% /sp- /silent /norestart /dir=!DestDir!
 
 if not exist !DestDir!\git-bash.exe (
-  call :EchoError GitBash 安装失败!
+  call :EchoError GitBash 安装失败！
 )
 
 endlocal
