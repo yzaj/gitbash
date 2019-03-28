@@ -34,22 +34,12 @@ if not exist %GitSrc% (
 )
 
 REM 安装 GitBash
+echo,正在安装 GitBash ...
+start /wait "" %GitSrc% /sp- /silent /norestart /dir="%DestDir%"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if not exist %DestDir%\git-bash.exe (
+  call :EchoError GitBash 安装失败!
+)
 
 REM 标签
 exit
