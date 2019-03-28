@@ -33,6 +33,15 @@ if not exist %GitBash% (
   call :EchoMessage Error - GitBash 安装失败！
 )
 
+REM 复制文件
+xcopy resource\"Git Bash.lnk" C:\Users\Public\Desktop /y
+xcopy resource\.minttyrc %UserProfile% /y
+xcopy resource\.bash_history %UserProfile% /y
+
+if not exist %UserProfile%\.gitconfig (
+  xcopy resource\.gitconfig %UserProfile%
+)
+
 exit
 REM 标签
 :EchoMessage
