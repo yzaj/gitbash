@@ -18,7 +18,7 @@ if exist %GitBash% (
 
 REM обть GitBash
 if not exist %GitSrc% (
-  wget.exe -c %GitUrl%
+  resource\wget.exe -c %GitUrl%
 )
 
 if not exist %GitSrc% (
