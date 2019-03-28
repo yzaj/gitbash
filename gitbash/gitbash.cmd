@@ -19,7 +19,7 @@ if exist %DestDir%\git-bash.exe (
 setlocal enabledelayedexpansion
 
 if exist D:\ (
-  set DestDir=D:\yzaj\Git
+  set DestDir="D:\yzaj\Git"
   
   if exist !DestDir!\git-bash.exe (
     call :EchoError GitBash ÒÑ°²×°£¡
