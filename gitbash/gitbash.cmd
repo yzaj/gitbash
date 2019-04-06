@@ -13,7 +13,7 @@ cd /d %RootDir%
 
 REM 检查 GitBash
 if exist %GitBash% (
-  call :EchoMessage GitBash 已安装！
+  call :Err GitBash 已安装！
 )
 
 REM 下载 GitBash
@@ -22,7 +22,7 @@ if not exist %GitSrc% (
 )
 
 if not exist %GitSrc% (
-  call :EchoMessage GitBash 下载失败！
+  call :Err GitBash 下载失败！
 )
 
 REM 安装 GitBash
@@ -30,7 +30,7 @@ echo,正在安装 GitBash ...
 start /wait "" %GitSrc% /sp- /silent /norestart
 
 if not exist %GitBash% (
-  call :EchoMessage GitBash 安装失败！
+  call :Err GitBash 安装失败！
 )
 
 REM 复制文件
@@ -44,7 +44,7 @@ if not exist %UserProfile%\.gitconfig (
 
 exit
 REM 标签
-:EchoMessage
+:Err
 echo,%~nx0: %*
 pause>nul
 exit
