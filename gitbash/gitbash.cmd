@@ -22,7 +22,7 @@ if not exist %GitSrc% (
 )
 
 if not exist %GitSrc% (
-  call :EchoMessage Error - GitBash 下载失败！
+  call :EchoMessage GitBash 下载失败！
 )
 
 REM 安装 GitBash
@@ -30,7 +30,7 @@ echo,正在安装 GitBash ...
 start /wait "" %GitSrc% /sp- /silent /norestart
 
 if not exist %GitBash% (
-  call :EchoMessage Error - GitBash 安装失败！
+  call :EchoMessage GitBash 安装失败！
 )
 
 REM 复制文件
@@ -45,7 +45,7 @@ if not exist %UserProfile%\.gitconfig (
 exit
 REM 标签
 :EchoMessage
-echo,%*
+echo,%~nx0: %*
 pause>nul
 exit
 goto:eof
